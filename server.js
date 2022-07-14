@@ -25,6 +25,10 @@ if (process.env.NODE_ENV == "production") {
     res.sendFile(path.join(__dirname, "/fpp-frontend/build/index.html"));
   });
 }
+app.get("/", (req, res) => {
+  res.send("Hello World");
+});
+
 app.listen(port, () => {
   console.log("listening at" + port);
 });
