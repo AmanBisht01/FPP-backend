@@ -5,7 +5,7 @@ const port = process.env.PORT || 8000;
 const app = process.env.NODE_ENV;
 let url = "";
 // if (app === "development") {
-//   url = `http://localhost:${port}`;
+// url = `http://localhost:${port}`;
 // } else {
 url = `https://yourprojectpartner.herokuapp.com`;
 // }
