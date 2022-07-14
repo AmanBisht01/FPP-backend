@@ -2,6 +2,7 @@ import express from "express";
 const router = new express.Router();
 import store from "../multer.js";
 import User from "../model/users.js";
+import sharp from "sharp";
 
 //---------------------------- READ USER -----------------------//
 router.get("/profile/:id", async (req, res) => {
@@ -45,7 +46,7 @@ router.post("/signup/create/:id", store.single("profile"), async (req, res) => {
   try {
     const _id = req.params.id;
     const updates = Object.keys(req.body);
-    console.log("line 48 user.js ", req.file["filename"]);
+    // console.log("line 48 user.js ", req.file["filename"]);
     const user = await User.findById(_id);
     updates.forEach((key) => {
       const val = req.body[key];
@@ -57,8 +58,24 @@ router.post("/signup/create/:id", store.single("profile"), async (req, res) => {
     });
 
     user["profile"] = req.file["filename"];
-    console.log(user);
-    await user.save();
+
+    sharp.cache(false);
+
+    async function resizeFile() {
+      let buffer = await sharp(`fpp-frontend/build/uploads/${user["profile"]}`)
+        .resize(200, 200, {
+          fit: sharp.fit.inside,
+          withoutEnlargement: true,
+        })
+        .toBuffer();
+      return sharp(buffer).toFile(
+        `fpp-frontend/build/uploads/${user["profile"]}`
+      );
+    }
+    resizeFile();
+    await resizeFile().then(() => {
+      user.save();
+    });
 
     if (!user) res.status(404).send();
     else res.status(201).send(user);
