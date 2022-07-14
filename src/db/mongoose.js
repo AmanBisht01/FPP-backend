@@ -4,7 +4,8 @@ import dotenv from "dotenv";
 
 dotenv.config();
 
-const mongoUrl = process.env.MONGO_URL;
+const mongoUrl =
+  "mongodb+srv://aman:aman@cluster0.v3g1r.mongodb.net/FPP?retryWrites=true&w=majority";
 mongoose
   .connect(mongoUrl, {
     useNewUrlParser: true,
