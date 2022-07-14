@@ -15,5 +15,3 @@ const instance = axios.create({
 });
 
 export default instance;
-// ,
-//   "proxy": "http://localhost:8000/"
