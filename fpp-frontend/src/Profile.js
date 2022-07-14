@@ -42,7 +42,6 @@ const Profile = () => {
                 alt={user.name}
                 id="profile-avatar"
               />
-              {/* <img src={`${process.env.PUBLIC_URL}/uploads/${user.profile}`} alt="profile" /> */}
             </div>
             <div className="profile-details">
               <div className="profile-name">
