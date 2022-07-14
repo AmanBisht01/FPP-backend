@@ -7,7 +7,7 @@ let url = "";
 if (app === "development") {
   url = `http://localhost:${port}`;
 } else {
-  url = `https://yourprojectpartner.herokuapp.com/`;
+  url = `https://yourprojectpartner.herokuapp.com`;
 }
 
 const instance = axios.create({
@@ -15,3 +15,5 @@ const instance = axios.create({
 });
 
 export default instance;
+// ,
+//   "proxy": "http://localhost:8000/"
