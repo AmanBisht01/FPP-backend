@@ -19,15 +19,15 @@ app.use(messageRouter);
 app.use(userRouter);
 const __dirname = path.resolve();
 
-if (process.env.NODE_ENV == "production") {
+if (true) {
   app.use(express.static("fpp-frontend/build"));
   app.get("*", (req, res) => {
     res.sendFile(path.join(__dirname, "/fpp-frontend/build/index.html"));
   });
 }
-app.get("/", (req, res) => {
-  res.send("Hello World");
-});
+// app.get("/", (req, res) => {
+//   res.send("Hello World");
+// });
 
 app.listen(port, () => {
   console.log("listening at" + port);
