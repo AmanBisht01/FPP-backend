@@ -7,7 +7,7 @@ let url = "";
 // if (app === "development") {
 // url = `http://localhost:${port}`;
 // } else {
-url = `https://yourprojectpartner.herokuapp.com`;
+url = `https://happy-fish-scarf.cyclic.app`;
 // }
 
 const instance = axios.create({
