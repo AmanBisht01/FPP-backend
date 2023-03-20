@@ -7,7 +7,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
-    "postbuild" :"Aman Bisht Rocks", 
+    "prebuild": "echo war has started",
+    "postbuild" :"echo Aman Bisht Rocks", 
     "build": "NPM_CONFIG_PRODUCTION=false npm install --prefix fpp-frontend && npm run build --prefix fpp-frontend"
   },
   "author": "Aman Bisht",
