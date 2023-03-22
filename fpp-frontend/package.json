@@ -44,5 +44,5 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "https://happy-fish-scarf.cyclic.app"
+  "proxy": "https://happy-fish-scarf.cyclic.app , https://fpp-backend.vercel.app"
 }
