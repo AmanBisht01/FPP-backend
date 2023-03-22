@@ -7,7 +7,7 @@ let url = "";
 // if (app === "development") {
 // url = `http://localhost:${port}`;
 // } else {
-url = `https://fpp-backend.vercel.app`;
+url = `https://happy-fish-scarf.cyclic.app`;
 // }
 
 const instance = axios.create({
